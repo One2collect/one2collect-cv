@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>One2Collect - CV Upload</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+      line-height: 1.5;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    p {
+      margin-bottom: 20px;
+    }
+    form {
+      display: grid;
+      gap: 12px;
+    }
+    input, textarea, button {
+      padding: 12px;
+      font-size: 16px;
+    }
+    button {
+      cursor: pointer;
+    }
+    small {
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Werk met One2Collect samen</h1>
+  <p>
+    Werk je in credit management, finance, administratie of juridische ondersteuning?
+    Laat hier je gegevens en CV achter. Dan nemen wij contact met je op als er een passende samenwerking is.
+  </p>
+
+  <form action="/upload-cv" method="POST" enctype="multipart/form-data">
+    <input type="text" name="name" placeholder="Naam" required />
+    <input type="email" name="email" placeholder="E-mailadres" required />
+    <input type="text" name="phone" placeholder="Telefoonnummer" />
+    <textarea name="message" placeholder="Bericht" rows="5"></textarea>
+    <input type="file" name="cv" accept=".pdf,.doc,.docx" required />
+
+    <label>
+      <input type="checkbox" required />
+      Ik ga akkoord met de verwerking van mijn persoonsgegevens en met een bewaartermijn van maximaal 6 maanden.
+    </label>
+
+    <small>
+      Door je CV te uploaden geef je toestemming aan One2Collect om je gegevens te verwerken
+      voor mogelijke samenwerking. Je gegevens worden maximaal 6 maanden bewaard.
+    </small>
+
+    <button type="submit">Verstuur CV</button>
+  </form>
+</body>
+</html>
